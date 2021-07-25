@@ -60,12 +60,6 @@ class App extends Component {
       }
       
       })
-      .catch (err => {
-        this.setState({
-          error: true,
-          errorMessage: err
-        })
-      })
     .then( data => {
       const time = new Date().toLocaleString()
       const weatherIndex = data.weather.length - data.weather.length
