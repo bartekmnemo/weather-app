@@ -38,13 +38,13 @@ class App extends Component {
   handleCityClick = e => {
     e.preventDefault()
     const city = this.state.value
-    const API = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
     fetch(API)
     .then( response => {
       if(response.ok) {
         return response.json()
       }
-      throw Error(`Niepoprawna nazwa miasta`)
+      throw Error(`Incorrect city name`)
       })
     .then( data => {
       const time = new Date().toLocaleString()
