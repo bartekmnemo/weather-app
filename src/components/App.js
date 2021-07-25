@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TopPanel from './TopPanel';
 import Form from './Form'
 import Result from './Result'
 import './App.css';
@@ -62,7 +63,7 @@ class App extends Component {
         temp_min: data.main.temp_min,
         temp_max: data.main.temp_max,
         humidity: data.main.humidity,
-        pressure: data.main.pressurp, 
+        pressure: data.main.pressure, 
         wind_speed: data.wind.speed,
         wind_deg: data.wind.deg,
         weather_main: data.weather[weatherIndex].main,
@@ -82,6 +83,7 @@ class App extends Component {
   render() { 
     return ( 
       <div className="app">
+        <TopPanel />
         <Form value={this.state.value} change={this.handleValueChange} click={this.handleCityClick}/>
         <Result all={this.state}/>
       </div>

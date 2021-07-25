@@ -1,4 +1,5 @@
 import React from 'react';
+import './Result.css'
 
 const Result = props => {
     const {value, date, timezone, country, city, sunrise, sunset ,temp ,feels_like ,temp_min ,temp_max ,humidity ,pressure ,wind_speed ,wind_deg ,weather_main ,weather_description , error} = props.all

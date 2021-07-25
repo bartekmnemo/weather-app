@@ -1,0 +1,14 @@
+.result {
+    margin: 50px auto;
+    padding: 20px;
+    width: 50%;
+    border: 4px dotted black;
+}
+
+.result > h3 {
+    font-size: 36px;
+}
+
+.result > h4 {
+    padding: 10px;
+}
