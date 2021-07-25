@@ -2,4 +2,10 @@ input, button {
     margin-right: 10px;
     padding: 10px 20px;
     border: 2px solid black;
+    transition: .3s;
+}
+
+button:hover {
+    background-color: #aaa;
+    cursor: pointer;
 }

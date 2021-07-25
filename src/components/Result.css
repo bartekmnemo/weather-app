@@ -12,3 +12,14 @@
 .result > h4 {
     padding: 10px;
 }
+
+.errorMessage {
+    margin: 30px;
+    font-size: 46px;
+    color: crimson;
+}
+
+.errorTitle {
+    font-weight: bold;
+    color: black;
+}

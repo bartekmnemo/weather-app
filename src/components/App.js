@@ -26,13 +26,16 @@ class App extends Component {
     wind_deg: '',
     weather_main: '',
     weather_description: '',
-    error: false
+    error: false,
+    errorId: '',
+    errorMessage: ''
    }
 
 
   handleValueChange = e => {
     this.setState({
       value: e.target.value,
+      errorId: ''
     })
   }
 
@@ -42,15 +45,30 @@ class App extends Component {
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
     fetch(API)
     .then( response => {
-      if(response.ok) {
+      if(response.status === 200) {
         return response.json()
+      }else if (response.status === 404){
+        this.setState({
+          errorId: 1
+        })
+        throw Error(`Incorrect city name`)
+      }else if (response.status === 500){
+        this.setState({
+          errorId: 2
+        })
+        throw Error(`The request was not completed due to an internal error on the server side.`)
       }
-      throw Error(`Incorrect city name`)
+      
+      })
+      .catch (err => {
+        this.setState({
+          error: true,
+          errorMessage: err
+        })
       })
     .then( data => {
       const time = new Date().toLocaleString()
       const weatherIndex = data.weather.length - data.weather.length
-      console.log(time)
       this.setState( prevState => ({
         date: time,
         timezone: data.timezone,
@@ -72,12 +90,11 @@ class App extends Component {
       }))
     })
     .catch (err => {
-      console.log(err)
       this.setState({
-        error: true
+        error: true,
+        errorMessage: err
       })
     })
-    console.log(this.state.city)
   }
 
   render() { 
