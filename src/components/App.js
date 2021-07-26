@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TopPanel from './TopPanel';
 import Form from './Form'
 import Result from './Result'
+import LoadingScreen from './LoadingScreen';
 import './App.css';
 
 // API from https://home.openweathermap.org
@@ -124,7 +125,7 @@ class App extends Component {
       <div className="app">
         <TopPanel />
         <Form value={this.state.value} change={this.handleValueChange} click={this.handleCityClick} countryID={this.state.countryID}/>
-        {this.state.isloading ? <h1>Loading Screen</h1> : <Result all={this.state}/>}
+        {this.state.isloading ? <LoadingScreen/> : <Result all={this.state}/>}
       </div>
      );
   }
