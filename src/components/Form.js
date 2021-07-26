@@ -40,10 +40,10 @@ const Form = props => {
                 <option value="pt_br">Português Brasil</option>
                 <option value="ro">Romanian</option>
                 <option value="ru">Russian</option>
-                <option value="sv">Swedish</option>
+                <option value="se">Swedish</option>
                 <option value="sk">Slovak</option>
                 <option value="sl">Slovenian</option>
-                <option value="sp">Spanish</option>
+                <option value="es">Spanish</option>
                 <option value="sr">Serbian</option>
                 <option value="th">Thai</option>
                 <option value="tr">Turkish</option>

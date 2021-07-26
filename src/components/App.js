@@ -9,6 +9,7 @@ const ApiKey = "c84b8f5c077147fb55d9a448295d1fe7"
 
 class App extends Component {
   state = { 
+    isloading: false,
     value: '',
     countryID: 'en',
     iconImage: '',
@@ -51,10 +52,16 @@ class App extends Component {
     
   }
 
+  setToloading = () => {
+    this.setState({
+      isloading: true
+    })
+  }
+
   handleCityClick = e => {
     e.preventDefault()
     const city = this.state.value
-
+    this.setToloading();
     //Fahrenheit: units=imperial
     //Celsius: units=metric
     
@@ -73,6 +80,7 @@ class App extends Component {
           errorId: 2
         })
         throw Error(`The request was not completed due to an internal error on the server side.`)
+        
       }
       
       })
@@ -80,6 +88,7 @@ class App extends Component {
       const time = new Date().toLocaleString()
       const weatherIndex = data.weather.length - data.weather.length
       this.setState( prevState => ({
+        isloading: false,
         value: '',
         iconImage: `http://openweathermap.org/img/wn/${data.weather[weatherIndex].icon}@2x.png`,
         date: time,
@@ -104,7 +113,8 @@ class App extends Component {
     .catch (err => {
       this.setState({
         error: true,
-        errorMessage: err
+        errorMessage: err,
+        isloading: false
       })
     })
   }
@@ -114,7 +124,7 @@ class App extends Component {
       <div className="app">
         <TopPanel />
         <Form value={this.state.value} change={this.handleValueChange} click={this.handleCityClick} countryID={this.state.countryID}/>
-        <Result all={this.state}/>
+        {this.state.isloading ? <h1>Loading Screen</h1> : <Result all={this.state}/>}
       </div>
      );
   }
