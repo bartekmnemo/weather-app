@@ -10,6 +10,7 @@ const ApiKey = "c84b8f5c077147fb55d9a448295d1fe7"
 class App extends Component {
   state = { 
     value: '',
+    countryID: 'en',
     date: '',
     timezone: '',
     country: '',
@@ -33,16 +34,30 @@ class App extends Component {
 
 
   handleValueChange = e => {
-    this.setState({
-      value: e.target.value,
-      errorId: ''
-    })
+    if(e.target.type === 'text')
+    {
+      this.setState({
+        value: e.target.value,
+        errorId: ''
+      })
+    } else if (e.target.type === 'select-one'){
+      this.setState({
+        countryID: e.target.value,
+        errorId: ''
+      })
+    }
+   
+    
   }
 
   handleCityClick = e => {
     e.preventDefault()
     const city = this.state.value
-    const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`
+
+    //Fahrenheit: units=imperial
+    //Celsius: units=metric
+
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${city},${this.state.countryID}&appid=${ApiKey}&units=metric`
     fetch(API)
     .then( response => {
       if(response.status === 200) {
@@ -60,10 +75,11 @@ class App extends Component {
       }
       
       })
-    .then( data => {
+    .then( data => {  
       const time = new Date().toLocaleString()
       const weatherIndex = data.weather.length - data.weather.length
       this.setState( prevState => ({
+        value: '',
         date: time,
         timezone: data.timezone,
         country: data.sys.country,
@@ -95,7 +111,7 @@ class App extends Component {
     return ( 
       <div className="app">
         <TopPanel />
-        <Form value={this.state.value} change={this.handleValueChange} click={this.handleCityClick}/>
+        <Form value={this.state.value} change={this.handleValueChange} click={this.handleCityClick} countryID={this.state.countryID}/>
         <Result all={this.state}/>
       </div>
      );
