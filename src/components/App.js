@@ -62,16 +62,18 @@ class App extends Component {
   }
 
   handleCityClick = e => {
+    
     let city = 'dubai'
     if(e !== undefined) 
     {
       e.preventDefault()
       city = this.state.value
     }
+    if(city < 2) return
      this.setToloading();
     //Fahrenheit: units=imperial
     //Celsius: units=metric
-    
+
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${city},${this.state.countryID}&appid=${ApiKey}&units=metric`
     fetch(API)
     .then( response => {
@@ -92,6 +94,7 @@ class App extends Component {
       
       })
     .then( data => {  
+      console.log(data)
       const time = new Date().toLocaleTimeString()
       const weatherIndex = data.weather.length - data.weather.length
       this.setState( prevState => ({

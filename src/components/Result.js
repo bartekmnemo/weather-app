@@ -23,7 +23,7 @@ const Result = props => {
         const sunsetTime = new Date((sunset + timezone - 7200) * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});;
         const windKM = Math.round((wind_speed / 1000) * 3600)
         const windDirection = {
-            transform: `rotate(${wind_deg}deg)`,
+            transform: `rotate(${wind_deg-45}deg)`, // -45deg because of image direction
         };
 
         content = (
@@ -50,8 +50,8 @@ const Result = props => {
                                 <p>{pressure} hPa</p>
                             </div>
                             <div className="weatherParam">
-                                <p>Wind direction / speed</p>
-                                <p>{<i className="fas fa-location-arrow"  style={windDirection}></i>} {windKM} Km/h | {directionsOfTheWorld(wind_deg)}</p>
+                                <p>Wind direction | speed</p>
+                                <p>{<i className="fas fa-location-arrow"  style={windDirection}></i>} {directionsOfTheWorld(wind_deg)} | {windKM} Km/h</p>
                             </div>
                         </div>
                     </div>

@@ -4,14 +4,14 @@ import Result from './Result'
 import LoadingScreen from './LoadingScreen';
 
 const Form = props => {
-    const {isloading, value, countryID, iconImage, date, timezone, country, city, sunrise, sunset ,temp ,feels_like ,temp_min ,temp_max ,humidity ,pressure ,wind_speed ,wind_deg ,weather_main ,weather_description ,error, errorId, errorMessage } = props.all
+    const {isloading, value, countryID, country, city, error } = props.all
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
     return ( 
         <div className="mainPanel">
             <form>
-                 {errorId ? null : <div className="sideCountry"><span>{capitalizeFirstLetter(city)}<sup>({country})</sup></span> </div>}   
+                 {error ? null : <div className="sideCountry"><span>{capitalizeFirstLetter(city)}<sup>{country}</sup></span> </div>}   
                 
                 <input type="text" value={value} onChange={props.change} placeholder="enter a city name" />
                 {/* For more country codes visit => https://www.andiamo.co.uk/resources/iso-language-codes/ */}
