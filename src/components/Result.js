@@ -60,7 +60,7 @@ const Result = props => {
                    
                    
                 <div className="rightInfo">
-                    <div className="weatherParam">{weather_description}</div>
+                  <div className="weatherParam"> {weather_description}</div>
                   <div className="weatherParam">Humidity: {humidity}%</div>
                   <div className="weatherParam">Visibility: {(visibility / 1000).toFixed(1)}km</div>
                   
