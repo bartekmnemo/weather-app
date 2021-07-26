@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import TopPanel from './TopPanel';
-import Form from './Form'
-import Result from './Result'
-import LoadingScreen from './LoadingScreen';
+import MainPanel from './MainPanel'
+import Footer from './Footer';
 import './App.css';
 
 // API from https://home.openweathermap.org
@@ -12,7 +11,7 @@ class App extends Component {
   state = { 
     isloading: false,
     value: '',
-    countryID: 'en',
+    countryID: '',
     iconImage: '',
     date: '',
     timezone: '',
@@ -30,11 +29,14 @@ class App extends Component {
     wind_deg: '',
     weather_main: '',
     weather_description: '',
+    visibility: '',
     error: false,
     errorId: '',
     errorMessage: ''
    }
-
+   componentDidMount = () => {
+    this.handleCityClick();
+  }
 
   handleValueChange = e => {
     if(e.target.type === 'text')
@@ -60,9 +62,13 @@ class App extends Component {
   }
 
   handleCityClick = e => {
-    e.preventDefault()
-    const city = this.state.value
-    this.setToloading();
+    let city = 'dubai'
+    if(e !== undefined) 
+    {
+      e.preventDefault()
+      city = this.state.value
+    }
+     this.setToloading();
     //Fahrenheit: units=imperial
     //Celsius: units=metric
     
@@ -86,7 +92,7 @@ class App extends Component {
       
       })
     .then( data => {  
-      const time = new Date().toLocaleString()
+      const time = new Date().toLocaleTimeString()
       const weatherIndex = data.weather.length - data.weather.length
       this.setState( prevState => ({
         isloading: false,
@@ -108,6 +114,7 @@ class App extends Component {
         wind_deg: data.wind.deg,
         weather_main: data.weather[weatherIndex].main,
         weather_description: data.weather[weatherIndex].description,
+        visibility: data.visibility,
         error: false
       }))
     })
@@ -124,11 +131,13 @@ class App extends Component {
     return ( 
       <div className="app">
         <TopPanel />
-        <Form value={this.state.value} change={this.handleValueChange} click={this.handleCityClick} countryID={this.state.countryID}/>
-        {this.state.isloading ? <LoadingScreen/> : <Result all={this.state}/>}
+        <MainPanel all={this.state} change={this.handleValueChange} click={this.handleCityClick}/>
+        <Footer/>
       </div>
      );
   }
 }
- 
+
+
+
 export default App;

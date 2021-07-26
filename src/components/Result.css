@@ -1,26 +1,113 @@
 .result {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-    margin: 50px auto;
-    padding: 20px;
-    width: 50%;
-    border: 4px dotted black;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    color: white;
+    background-color: #0C4160;
 }
 
-.mainInfos {
+.trashInfos {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    height: 100px;
-    padding: 20px;
-    font-size: 28px;
+    justify-items: center;
+    height: 60px;
+    width: 100%;
+    padding-left: 80px;
+    font-size: 18px;
 }
 
+.trashInfos img {
+    height: 30px;
+}
 
-.mainInfos img{
-    width: 100px;
+.detailInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    min-height: 30vh;
+    width: 100%;
+    padding: 0;
+    font-size: 18px;
+}
+
+.leftInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    padding-left: 40px;
+    font-size: 64px;
+}
+
+.tempPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.weatherWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    flex-basis: 60%;
+    font-size: 36px;
+}
+
+.weatherDetails {
+    display: flex;
+    flex-direction: row;
+    font-weight: normal;
+}
+
+.weatherParam {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+.weatherParam p:first-of-type{
+    color: gray;
+}
+
+.weatherParam p:nth-child(2){
+    text-align: left;
+    font-weight: bold;
+}
+
+.leftInfo h4 {
+    font-weight: lighter;
+}
+
+.leftInfo img {
+    height: 150px;
+}
+
+.rightInfo {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    text-align: left;
+}
+
+.rightInfo div:nth-child(1) {
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .result > h4 {

@@ -1,0 +1,67 @@
+.mainPanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    padding: 15px;
+    background-color: #ccc;
+    min-height: 100px;
+}
+.sideCountry {
+    position: absolute;
+    left: 5%;
+    
+    
+}
+
+.sideCountry span {
+    font-size: 72px;
+    font-weight:lighter;
+    letter-spacing: 10px;
+}
+
+.sideCountry span sup {
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: rgb(139, 20, 20);
+}
+input, button, select {
+    position: absolute;
+    height: 60px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: 2px solid black;
+    transition: .3s;
+    font-size: 28px;
+}
+input {
+    width: 260px;
+    right: 270px;
+}
+
+select {
+    right: 90px;
+    padding: 10px 5px;
+    width: 180px;
+    border-right: none;
+    border-left: none;
+}
+
+button {
+    width: 80px;
+    right: 10px;
+}
+
+button:hover {
+    background-color: #aaa;
+    cursor: pointer;
+}
