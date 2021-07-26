@@ -11,6 +11,7 @@ class App extends Component {
   state = { 
     value: '',
     countryID: 'en',
+    iconImage: '',
     date: '',
     timezone: '',
     country: '',
@@ -56,7 +57,7 @@ class App extends Component {
 
     //Fahrenheit: units=imperial
     //Celsius: units=metric
-
+    
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${city},${this.state.countryID}&appid=${ApiKey}&units=metric`
     fetch(API)
     .then( response => {
@@ -80,6 +81,7 @@ class App extends Component {
       const weatherIndex = data.weather.length - data.weather.length
       this.setState( prevState => ({
         value: '',
+        iconImage: `http://openweathermap.org/img/wn/${data.weather[weatherIndex].icon}@2x.png`,
         date: time,
         timezone: data.timezone,
         country: data.sys.country,

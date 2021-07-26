@@ -1,12 +1,26 @@
 .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
     margin: 50px auto;
     padding: 20px;
     width: 50%;
     border: 4px dotted black;
 }
 
-.result > h3 {
-    font-size: 36px;
+.mainInfos {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 20px;
+    font-size: 28px;
+}
+
+
+.mainInfos img{
+    width: 100px;
 }
 
 .result > h4 {
