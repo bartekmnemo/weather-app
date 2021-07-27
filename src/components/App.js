@@ -105,7 +105,7 @@ class App extends Component {
         isloading: false,
         firstLoad: false,
         value: '',
-        iconImage: `http://openweathermap.org/img/wn/${data.weather[weatherIndex].icon}@2x.png`,
+        iconImage: `https://openweathermap.org/img/wn/${data.weather[weatherIndex].icon}@2x.png`,
         date: time,
         timezone: data.timezone,
         country: data.sys.country,

@@ -4,7 +4,7 @@ import sunriseIcon from '../img/sunriseIcon.svg';
 import sunsetIcon from '../img/sunsetIcon.svg';
 
 const Result = props => {
-    const {value, iconImage, date, timezone, visibility, city, sunrise, sunset ,temp ,feels_like ,temp_min ,temp_max ,humidity ,pressure ,wind_speed, wind_deg ,weather_main ,weather_description ,error, errorId, errorMessage } = props.all
+    const { iconImage, date, timezone, visibility, city, sunrise, sunset ,temp ,feels_like ,temp_min ,temp_max ,humidity ,pressure ,wind_speed, wind_deg ,weather_main ,weather_description ,error,  errorMessage } = props.all
     let content = null
 
     const directionsOfTheWorld = (deg) => {
