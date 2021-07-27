@@ -17,3 +17,9 @@ a {
    color: rgba(216, 216, 216, 0.4);
    font-weight: normal;
 }
+
+@media screen and (max-width:640px) {
+    Footer {
+        width: 100%;
+    }
+}

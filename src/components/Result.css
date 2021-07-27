@@ -263,11 +263,31 @@
     .rightInfo {
         flex-direction: column;
         align-items: center;
+       text-align: center;
     }
 
     .weatherParam {
         padding: 20px;
         font-size: 42px;
         width: 100%;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .result {
+        width: 100%;
+    }
+    
+    .tempPanel {
+        font-size: 80px;
+    }
+    .tempPanel img {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .tempPanel img {
+        height: 100px;
     }
 }
