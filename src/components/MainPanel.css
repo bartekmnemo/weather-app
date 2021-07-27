@@ -132,8 +132,23 @@ button:hover {
 }
 
 @media screen and (max-width:640px) {
+    
     .sideCountry span {
         font-size: 36px;
         letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    select {
+        right: 80px;
+    }
+    
+    button {
+        right: 20px;
+    }
+
+    input {
+        right: 100px;
     }
 }

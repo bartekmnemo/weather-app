@@ -53,3 +53,9 @@ nav .logo {
     color:orange;
 }
 
+
+@media screen and (max-width:640px) {
+    nav {
+        margin: 0;
+    }
+}

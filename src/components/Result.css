@@ -264,16 +264,21 @@
         flex-direction: column;
         align-items: center;
        text-align: center;
+       padding: 0;
     }
 
     .weatherParam {
-        padding: 20px;
+        padding: 10px 0;
         font-size: 42px;
         width: 100%;
     }
 }
 
 @media screen and (max-width:640px) {
+
+    .trashInfos {
+        font-size: 14px;
+    }
     .result {
         width: 100%;
     }
@@ -284,10 +289,13 @@
     .tempPanel img {
         height: 150px;
     }
+    
 }
 
 @media screen and (max-width:480px) {
+
     .tempPanel img {
         height: 100px;
     }
+
 }
