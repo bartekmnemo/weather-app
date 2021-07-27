@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopPanel from './TopPanel';
+import Navigation from './Navigation';
 import MainPanel from './MainPanel'
 import Footer from './Footer';
 import './App.css';
@@ -10,6 +10,7 @@ const ApiKey = "c84b8f5c077147fb55d9a448295d1fe7"
 class App extends Component {
   state = { 
     isloading: false,
+    firstLoad: true,
     value: '',
     countryID: '',
     iconImage: '',
@@ -57,22 +58,27 @@ class App extends Component {
 
   setToloading = () => {
     this.setState({
-      isloading: true
+      isloading: true,
+      country: '',
+      city: ''
     })
   }
 
   handleCityClick = e => {
-    
-    let city = 'dubai'
+    let city = this.state.value
+
+    if(this.state.firstLoad) city='dubai'
+  
     if(e !== undefined) 
     {
       e.preventDefault()
-      city = this.state.value
     }
-    if(city < 2) return
+    if(city.length <= 2) return
      this.setToloading();
     //Fahrenheit: units=imperial
     //Celsius: units=metric
+
+    
 
     const API = `https://api.openweathermap.org/data/2.5/weather?q=${city},${this.state.countryID}&appid=${ApiKey}&units=metric`
     fetch(API)
@@ -99,6 +105,7 @@ class App extends Component {
       const weatherIndex = data.weather.length - data.weather.length
       this.setState( prevState => ({
         isloading: false,
+        firstLoad: false,
         value: '',
         iconImage: `http://openweathermap.org/img/wn/${data.weather[weatherIndex].icon}@2x.png`,
         date: time,
@@ -122,6 +129,7 @@ class App extends Component {
       }))
     })
     .catch (err => {
+      console.log(err.message)
       this.setState({
         error: true,
         errorMessage: err,
@@ -133,7 +141,7 @@ class App extends Component {
   render() { 
     return ( 
       <div className="app">
-        <TopPanel />
+        <Navigation />
         <MainPanel all={this.state} change={this.handleValueChange} click={this.handleCityClick}/>
         <Footer/>
       </div>

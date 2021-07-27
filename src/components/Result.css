@@ -6,10 +6,10 @@
     align-items: center;
     align-content: center;
     width: 80%;
-    margin: 10px auto;
+    margin: 2px auto;
     padding: 10px;
     color: white;
-    background-color: #0C4160;
+    background-color: #0f5177;
 }
 
 .trashInfos {
@@ -19,7 +19,7 @@
     justify-items: center;
     height: 60px;
     width: 100%;
-    padding-left: 80px;
+    padding-left: 60px;
     font-size: 18px;
 }
 

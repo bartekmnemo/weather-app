@@ -13,7 +13,8 @@ form {
     position: relative;
     width: 80%;
     padding: 15px;
-    background-color: #ccc;
+    background-color: #0C4160;
+    color: white;
     min-height: 100px;
 }
 .sideCountry {
@@ -32,7 +33,7 @@ form {
 .sideCountry span sup {
     font-size: 24px;
     letter-spacing: 3px;
-    color: rgb(139, 20, 20);
+    color: rgb(255, 172, 95);
 }
 input, button, select {
     position: absolute;
@@ -42,7 +43,9 @@ input, button, select {
     border: 2px solid black;
     transition: .3s;
     font-size: 28px;
+    outline: none;
 }
+
 input {
     width: 260px;
     right: 270px;
