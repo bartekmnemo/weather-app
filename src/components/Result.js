@@ -75,7 +75,7 @@ const Result = props => {
     }
     return ( 
         <>
-             {errorId ? <p className="errorMessage">{errorMessage.message}: <span className="errorTitle">{value}</span></p> : content}
+             {errorId ? <p className="errorMessage">{errorMessage.message}</p> : content}
         </>
      );
 }

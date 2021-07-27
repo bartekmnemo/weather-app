@@ -125,13 +125,6 @@
     color: crimson;
 }
 
-.errorTitle {
-    font-weight: bold;
-    color: black;
-}
-
-
-
 @media screen and (max-width:1500px) {
     .weatherParam {
         font-size: 16px;
