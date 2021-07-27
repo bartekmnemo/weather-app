@@ -44,12 +44,10 @@ class App extends Component {
     {
       this.setState({
         value: e.target.value,
-        errorId: ''
       })
     } else if (e.target.type === 'select-one'){
       this.setState({
         countryID: e.target.value,
-        errorId: ''
       })
     }
    
