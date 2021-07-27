@@ -53,9 +53,20 @@ nav .logo {
     color:orange;
 }
 
-
-@media screen and (max-width:640px) {
+@media screen and (max-width:1060px) {
     nav {
         margin: 0;
+    }
+
+    
+    nav .logo {
+        margin-left: 1px;
+        font-size: 80%;
+        /* flex-basis: 122px; */
+        text-align: left;
+    }
+
+    .menu ul {
+        width: 100%;
     }
 }

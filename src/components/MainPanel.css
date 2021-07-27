@@ -71,6 +71,11 @@ button:hover {
 
 
 @media screen and (max-width:1060px) {
+    form {
+        width: 100%;
+        justify-content: right;
+    }
+
     input, button, select {
         margin: 0;
         font-size: 20px;
@@ -108,22 +113,6 @@ button:hover {
 }
 
 @media screen and (max-width:640px) {
-    form {
-        width: 100%;
-        justify-content: right;
-    }
-
-    select {
-        right: 130px;
-    }
-    
-    button {
-        right: 70px;
-    }
-
-    input {
-        right: 150px;
-    }
 
     .sideCountry span {
         font-size: 42px;
@@ -136,19 +125,5 @@ button:hover {
     .sideCountry span {
         font-size: 36px;
         letter-spacing: 2px;
-    }
-}
-
-@media screen and (max-width:480px) {
-    select {
-        right: 80px;
-    }
-    
-    button {
-        right: 20px;
-    }
-
-    input {
-        right: 100px;
     }
 }

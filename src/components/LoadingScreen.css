@@ -1,15 +1,20 @@
 .wrapper {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    width: 80%;
+    font-size: 42px;
+    color: red;
+    background-color: #0f5177;
 }
 
 .content {
     position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%)
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 200px;
 }
 
 .dot {
@@ -20,7 +25,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
     animation: loading 1s linear infinite normal;
 }
 
@@ -32,13 +37,18 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border-top: 3px solid black;
+    border-top: 3px solid white;
     animation: loading 1s linear infinite reverse;
 }
 
 .loadingText {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0);
     opacity: 1;
     font-size: 12px;
+    color:white;
     animation: fading 1s linear infinite alternate;
 }
 
@@ -51,5 +61,11 @@
 @keyframes fading {
     100% {
         opacity: 0.2;
+    }
+}
+
+@media screen and (max-width:1060px) {
+    .wrapper {
+        width: 100%;
     }
 }

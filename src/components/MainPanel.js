@@ -24,7 +24,7 @@ const Form = props => {
             <form>
                  {error ? null : <div className="sideCountry"><span>{capitalizeFirstLetter(city)}<sup>{country}</sup></span> </div>}   
                 
-                <input type="text" value={value} onChange={props.change} placeholder="enter a city name" />
+                <input type="text" value={value} onChange={props.change} placeholder="search..." />
                 {/* For more country codes visit => https://www.andiamo.co.uk/resources/iso-language-codes/ */}
                 <select id="countries" name="country" value={countryID} onChange={props.change}>
                     <option value="">Worldwide</option>

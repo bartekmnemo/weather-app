@@ -188,6 +188,10 @@
 }
 
 @media screen and (max-width:1060px) {
+    .result {
+        width: 100%;
+    }
+
     .trashInfos {
         font-size: 22px;
     }
@@ -271,9 +275,6 @@
 
     .trashInfos {
         font-size: 14px;
-    }
-    .result {
-        width: 100%;
     }
     
     .tempPanel {
