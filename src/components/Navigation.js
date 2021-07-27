@@ -10,8 +10,8 @@ const Navigation = () => {
                 </div>
                 <div className="menu">
                     <ul>
-                        <li><button className="menuOption">About me</button></li>
-                        <li><button className="menuOption">Info</button></li>
+                        <li><a target="_blank" rel="author noreferrer" href="https://www.instagram.com/be.st33v/" title="instagram.com/be.st33v" className="menuOption">About me</a></li>
+                        <li><a target="_blank" rel="author noreferrer" href="https://github.com/bartekmnemo/weather-app" title="https://github.com" className="menuOption">Info</a></li>
                     </ul>
                 </div>
             </div>
