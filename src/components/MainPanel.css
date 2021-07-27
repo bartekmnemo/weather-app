@@ -120,10 +120,33 @@ button:hover {
     }
 }
 
-@media screen and (max-width:640px) {
-    
+@media screen and (max-width:480px) {
     .sideCountry span {
-        font-size: 36px;
-        letter-spacing: 2px;
+        font-size: 10vw;
+    }
+}
+
+@media screen and (max-width:320px) {
+    form{
+        flex-direction: column;
+    }
+
+    .sideCountry span {
+        display: none;
+    }
+
+    input, button {
+        position: static;
+        right: 0;
+        top: 0;
+        width: 100%;
+        border: 2px solid black;
+        text-align: center;
+       /* padding: 0;
+       margin: 0; */
+    }
+
+    select {
+        display: none;
     }
 }

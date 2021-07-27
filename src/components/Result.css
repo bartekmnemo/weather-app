@@ -219,7 +219,7 @@
     }
 
     .weatherWrapper h3 {
-        font-size: 72px;
+        font-size: 15vw;
     }
 
     .weatherDetails .weatherParam {
@@ -248,25 +248,25 @@
     }
 
     .weatherDetails .weatherParam p:nth-child(1){
-        font-size: 38px;
+        font-size: 9vw;
     }
 
     .weatherDetails .weatherParam p:nth-child(2){
         width: 100%;
         text-align: center;
-        font-size: 42px;
+        font-size: 7vw;
     }
 
     .rightInfo {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+
        text-align: center;
        padding: 0;
     }
 
     .weatherParam {
-        padding: 10px 0;
-        font-size: 42px;
+        padding: 10px;
         width: 100%;
     }
 }
@@ -274,22 +274,45 @@
 @media screen and (max-width:640px) {
 
     .trashInfos {
-        font-size: 14px;
+        font-size: 4vw;
     }
     
     .tempPanel {
-        font-size: 80px;
+        font-size: 20vw;
     }
     .tempPanel img {
-        height: 150px;
+        height: 20vh;
     }
     
 }
 
 @media screen and (max-width:480px) {
-
-    .tempPanel img {
-        height: 100px;
+    .rightInfo {
+        flex-direction: column;
+    }
+    .weatherParam {
+        letter-spacing: 4px;
+        font-size: 18px;
     }
 
+    .tempPanel {
+        font-size: 18vw;
+    }
+    .tempPanel img {
+        height: 15vh;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .tempPanel {
+        flex-direction: column;
+        font-size: 14vw;
+    }
+    .tempPanel img {
+        height: 10vh;
+    }
+
+    .weatherParam {
+        font-size: 8vw;
+    }
 }

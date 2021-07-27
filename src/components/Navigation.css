@@ -1,6 +1,5 @@
 nav {
-    margin-bottom: 50px;
-    /* padding: 20px; */
+    margin-bottom: 30px;
     background-color: rgb(48, 47, 47);
     color: #ccc;
 }
@@ -15,10 +14,14 @@ nav {
 }
 
 nav .logo {
+    position: relative;
+    left: 0;
+    top:0;
     margin-left: 50px;
     /* flex-basis: 122px; */
     text-align: left;
 }
+
 
 .menu {
     display: flex;
@@ -99,3 +102,14 @@ nav .logo {
         font-size: 14px;
     }
 }
+
+@media screen and (max-width:320px) {
+    .navWrapper .logo {
+        font-size: 3vw;
+    }
+
+    .menu ul {
+        font-size: 8vw;
+    }
+
+}   
