@@ -1,17 +1,19 @@
 Footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    /* position: absolute;
+    bottom: 0; */
+    width: 80%;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #0C4160;
 }
 
 Footer div {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.2);
     font-weight: lighter;
 }
 
 a {
    text-decoration: none;
-   color: rgb(85, 85, 85);
+   color: rgba(216, 216, 216, 0.4);
    font-weight: normal;
 }

@@ -39,7 +39,7 @@ const Result = props => {
                         {<img src={iconImage} alt="weather_icon"/>}<h4>{Math.floor(temp)}&#176;C</h4>
                     </div>
                     <div className="weatherWrapper">
-                        {weather_main}
+                        <h3>{weather_main}</h3>
                         <div className="weatherDetails">
                             <div className="weatherParam">
                                 <p>Feels Like</p>
@@ -50,7 +50,7 @@ const Result = props => {
                                 <p>{pressure} hPa</p>
                             </div>
                             <div className="weatherParam">
-                                <p>Wind direction | speed</p>
+                                <p>Wind speed</p>
                                 <p>{<i className="fas fa-location-arrow"  style={windDirection}></i>} {directionsOfTheWorld(wind_deg)} | {windKM} Km/h</p>
                             </div>
                         </div>

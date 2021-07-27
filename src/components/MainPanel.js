@@ -5,9 +5,20 @@ import LoadingScreen from './LoadingScreen';
 
 const Form = props => {
     const {isloading, value, countryID, country, city, error } = props.all
-    function capitalizeFirstLetter(string) {
+    const capitalizeFirstLetter = (string) => {
+        let deleteSpace = string.indexOf(' ')
+        if(deleteSpace > 1)
+        {
+           return removeWordsAfterSpace(string, deleteSpace)
+        }
         return string.charAt(0).toUpperCase() + string.slice(1);
       }
+
+    const removeWordsAfterSpace = (string, space) => {
+        let newText = string.charAt(0).toUpperCase() + string.slice(1);
+            console.log(newText)
+            return newText.slice(0, space);
+    }
     return ( 
         <div className="mainPanel">
             <form>
